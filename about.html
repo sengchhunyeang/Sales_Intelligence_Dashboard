@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About · Sales Intelligence Dashboard 2026</title>
+<meta name="description" content="About the Sales Intelligence Dashboard 2026 project: its goal, the sales data behind it, how it was built and how each metric is defined.">
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+<div class="wrap">
+  <nav class="topnav" aria-label="Main">
+    <a class="brand" href="index.html">Sales Intelligence 2026</a>
+    <div class="links">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="about.html" aria-current="page">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </nav>
+
+  <header id="intro">
+    <p class="eyebrow">About</p>
+    <h1>About the project</h1>
+    <p class="lead">An interactive business intelligence dashboard that turns one Excel file of sales into clear, filterable insights.</p>
+  </header>
+
+  <section id="project">
+    <h2>The project</h2>
+    <p>The goal is to analyze <code>Module5_Sales_Data_2026.xlsx</code> and show what drives sales: which products sell, where, through which channel, to which customers and on which days.</p>
+    <p>It is a single static website. It needs no server and no database, so it loads fast and can be hosted for free.</p>
+  </section>
+
+  <section id="data">
+    <h2>The data</h2>
+    <div class="facts">
+      <div class="fact"><b>1,271</b><span>Sales lines</span></div>
+      <div class="fact"><b>6</b><span>Months, Jan–Jun 2026</span></div>
+      <div class="fact"><b>8</b><span>Products in 4 categories</span></div>
+      <div class="fact"><b>5</b><span>Provinces</span></div>
+    </div>
+    <div class="tbox" style="margin-top:12px">
+      <table>
+        <thead><tr><th>Column</th><th>Meaning</th></tr></thead>
+        <tbody>
+          <tr><td><code>Date</code>, <code>Month</code>, <code>Day</code></td><td>When the sale happened</td></tr>
+          <tr><td><code>Product</code>, <code>Category</code></td><td>What was sold</td></tr>
+          <tr><td><code>Province</code></td><td>Where it was sold</td></tr>
+          <tr><td><code>Channel</code></td><td>Store or Online</td></tr>
+          <tr><td><code>Customer Type</code></td><td>New or Returning</td></tr>
+          <tr><td><code>Quantity</code>, <code>Unit Price (USD)</code></td><td>How many, at what price</td></tr>
+          <tr><td><code>Total (USD)</code></td><td>Quantity × unit price</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="how-built">
+    <h2>How it was built</h2>
+    <ol class="steps">
+      <li>Read the <em>Sales Data</em> sheet of the Excel file with Python (pandas) and checked that every total equals quantity × unit price.</li>
+      <li>Embedded the rows in the page as JSON so the site works without a server.</li>
+      <li>Wrote the charts, filters and table in plain HTML, CSS and JavaScript, with no libraries.</li>
+      <li>Published the code on GitHub and hosted it on Vercel.</li>
+    </ol>
+  </section>
+
+  <section id="definitions">
+    <h2>Metric definitions</h2>
+    <div class="tbox">
+      <table>
+        <thead><tr><th>Metric</th><th>Definition</th></tr></thead>
+        <tbody>
+          <tr><td>Revenue</td><td>Sum of the Total (USD) column</td></tr>
+          <tr><td>Order</td><td>One sales line in the file</td></tr>
+          <tr><td>Average order value</td><td>Revenue ÷ orders</td></tr>
+          <tr><td>Share</td><td>A group's revenue ÷ total revenue under the current filters</td></tr>
+          <tr><td>Q1 / Q2</td><td>January–March / April–June 2026</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <span>Sales Intelligence Dashboard 2026</span>
+    <a href="sitemap.html">Sitemap</a>
+  </footer>
+</div>
+</body>
+</html>
